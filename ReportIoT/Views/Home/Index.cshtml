@@ -1,0 +1,371 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body class="g-sidenav-show  bg-gray-100">
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+        <hr class="horizontal light mt-0 mb-2">
+
+        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./dashboard.html">
+
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">dashboard</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./virtual-reality.html">
+
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">view_in_ar</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./rtl.html">
+
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">RTL</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./notifications.html">
+
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">notifications</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">Notifications</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </aside>
+    <main class="main-content border-radius-lg ">
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-lg-6 position-relative z-index-2">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-5">
+                            <div class="card  mb-2">
+                                <div class="card-header p-3 pt-2">
+                                    <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">thermostat</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize">Temperature</p>
+                                        <h4 id="temperatureValue" class="mb-0">@Model.dataSensor.Temperture</h4>
+                                    </div>
+                                </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> </span>TEMPERTURE</p>
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2">
+                                    <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">toys</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize">Gas</p>
+                                        <h4 id="GasValue" class="mb-0">@Model.dataSensor.Gasdata</h4>
+                                    </div>
+                                </div>
+
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0">
+                                        <span class="text-success text-sm font-weight-bolder"></span>
+                                        GAS VALUE
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2 bg-transparent">
+                                    <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">water_drop</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize ">Humidity</p>
+                                        <h4 id="HumidityValue" class="mb-0 ">@Model.dataSensor.humidity</h4>
+                                    </div>
+                                </div>
+
+                                <hr class="horizontal my-0 dark">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder"></span>HUMIDITY</p>
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2 bg-transparent">
+                                    <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">umbrella</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize ">Rainfall</p>
+                                        <h4 id="RaindropValue" class="mb-0 ">@Model.dataSensor.Raindrop</h4>
+                                    </div>
+                                </div>
+
+                                <hr class="horizontal my-0 dark">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder"></span>RAIN</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 position-relative z-index-2">
+
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-5">
+                            <div class="card  mb-2">
+                                <div class="card-header p-3 pt-2">
+                                    <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">thermostat</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize">Temperature</p>
+                                        <h4 class="mb-0">@Model.dataApi.Temperture</h4>
+                                    </div>
+                                </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> </span>TEMPERTURE</p>
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2">
+                                    <!-- Thay đổi icon thành biểu tượng gió -->
+                                    <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+                                        <!-- Sử dụng một biểu tượng gió thay cho 'toys' -->
+                                        <i class="material-icons opacity-10">cloud</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize">Wind</p>
+                                        <h4 class="mb-0">@Model.dataApi.WindSpeed</h4>
+                                    </div>
+                                </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0">
+                                        <span class="text-success text-sm font-weight-bolder"></span>
+                                        WINDSPEED
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2 bg-transparent">
+                                    <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                                        <i class="material-icons opacity-10">water_drop</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize ">Humidity</p>
+                                        <h4 id="HumidityValue" class="mb-0 ">@Model.dataApi.Humidity</h4>
+                                    </div>
+                                </div>
+
+                                <hr class="horizontal my-0 dark">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder"></span>HUMIDITY</p>
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <div class="card-header p-3 pt-2 bg-transparent">
+                                    <!-- Thay đổi biểu tượng thành biểu tượng mây -->
+                                    <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                                        <!-- Sử dụng biểu tượng mây thay cho 'umbrella' -->
+                                        <i class="material-icons opacity-10">cloud</i>
+                                    </div>
+                                    <div class="text-end pt-1">
+                                        <p class="text-sm mb-0 text-capitalize">Cloud</p>
+                                        <h4 id="RaindropValue" class="mb-0 ">@Model.dataApi.Cloud %</h4>
+                                    </div>
+                                </div>
+
+                                <hr class="horizontal my-0 dark">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder"></span>CLOUD</p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-11 mb-lg-0 mb-4">
+                    <div class="card z-index-2 mt-4">
+                        <div class="card-body mt-n5 px-3">
+                            <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1 mb-3">
+                                <div class="chart">
+                                    <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+                                </div>
+                            </div>
+                            <div class="container border-radius-lg">
+                                <div class="row">
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="material-icons opacity-10">groups</i>
+                                            </div>
+                                            <p class="text-xs my-auto font-weight-bold">Users</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">42K</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="material-icons opacity-10">ads_click</i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">1.7m</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="material-icons opacity-10">receipt</i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">399$</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="material-icons opacity-10">category</i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Items</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">74</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="material-icons py-2">settings</i>
+        </a>
+        <div class="card shadow-lg">
+            <div class="card-header pb-0 pt-3">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">WEB CONFIG</h5>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="material-icons">clear</i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+                    </div>
+                </a>
+
+                <!-- Sidenav Type -->
+
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+
+                <div class="d-flex">
+                    <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
+                    <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
+                    <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+                </div>
+
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+
+
+                <!-- Navbar Fixed -->
+
+                <div class="mt-3 d-flex">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                    <div class="form-check form-switch ps-0 ms-auto my-auto">
+                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+                    </div>
+                </div>
+
+
+
+                <hr class="horizontal dark my-3">
+                <div class="mt-2 d-flex">
+                    <h6 class="mb-0">Light / Dark</h6>
+                    <div class="form-check form-switch ps-0 ms-auto my-auto">
+                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+                    </div>
+                </div>
+                <hr class="horizontal dark my-sm-4">
+            </div>
+        </div>
+    </div>
+</body>
