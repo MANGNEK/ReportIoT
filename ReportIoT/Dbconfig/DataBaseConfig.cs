@@ -17,5 +17,6 @@ public static class DataBaseConfig
         services.AddScoped<IDataService, ReportDataService>();
         services.AddScoped<IDataDay, DataDayNowService>();
         services.AddScoped<IAccount,  AccountService>();
+        services.AddScoped<INotification, NotifycationServicecs>();
     }
 }
