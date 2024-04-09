@@ -40,6 +40,13 @@ function initializeChart() {
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1
+        },
+        {
+            label: 'Humidity',
+            data: [],
+            fill: false,
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.1
         }]
     };
 
@@ -57,12 +64,14 @@ function initializeChart() {
 function updateChartData(data) {
     myChart.data.labels.push(new Date().toLocaleTimeString());
     myChart.data.datasets[0].data.push(data.temperture);
+    myChart.data.datasets[1].data.push(data.humidity);
 
     // Giới hạn số lượng điểm trên biểu đồ để giữ nó trong khoảng nhất định
     const maxDataPoints = 7;
     if (myChart.data.labels.length > maxDataPoints) {
         myChart.data.labels.shift();
         myChart.data.datasets[0].data.shift();
+        myChart.data.datasets[1].data.shift();
     }
 
     myChart.update();
